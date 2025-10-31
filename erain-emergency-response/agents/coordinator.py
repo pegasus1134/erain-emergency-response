@@ -67,8 +67,8 @@ def analyze_with_metta(emergency_desc: str) -> Dict:
     # Semantic patterns for emergency type inference
     semantic_patterns = {
         "fire": {
-            "keywords": ["fire", "burning", "smoke", "flames", "blaze"],
-            "severity_modifiers": {"trapped": +2, "explosion": +3, "spreading": +2},
+            "keywords": ["fire", "burning", "smoke", "flames", "blaze", "fuel", "leak"],
+            "severity_modifiers": {"trapped": +2, "explosion": +3, "spreading": +2, "fuel": +2},
             "resources": ["fire_equipment", "emergency_teams", "water_supply"],
             "escalation": ["chemical_spill", "structural_collapse"]
         },
@@ -79,7 +79,7 @@ def analyze_with_metta(emergency_desc: str) -> Dict:
             "escalation": ["medical", "disease_outbreak"]
         },
         "medical": {
-            "keywords": ["injured", "heart", "bleeding", "unconscious", "accident"],
+            "keywords": ["injured", "heart", "bleeding", "unconscious", "accident", "injuries", "pile-up", "crash", "collision"],
             "severity_modifiers": {"multiple": +2, "critical": +3, "mass": +3},
             "resources": ["ambulance", "medical_supplies", "trauma_team"],
             "escalation": []
@@ -100,8 +100,8 @@ def analyze_with_metta(emergency_desc: str) -> Dict:
         score = sum(2 for keyword in patterns["keywords"] if keyword in desc_lower)
         type_scores[etype] = score
 
-    # Get the best match
-    best_type = max(type_scores, key=type_scores.get) if max(type_scores.values()) > 0 else "general"
+    # Get the best match - default to medical if no matches
+    best_type = max(type_scores, key=type_scores.get) if max(type_scores.values()) > 0 else "medical"
 
     # Calculate severity
     base_severity = 5.0
@@ -115,12 +115,21 @@ def analyze_with_metta(emergency_desc: str) -> Dict:
     resources = semantic_patterns.get(best_type, {}).get("resources", ["emergency_teams"])
     risks = semantic_patterns.get(best_type, {}).get("escalation", [])
 
+    # Fixed confidence calculation
+    if best_type in semantic_patterns and type_scores.get(best_type, 0) > 0:
+        # Calculate confidence based on keyword matches
+        matched_keywords = type_scores.get(best_type, 0) / 2  # Each match scores 2
+        total_keywords = len(semantic_patterns[best_type]["keywords"])
+        confidence = min(0.95, (matched_keywords / total_keywords) + 0.5)  # Base 50% + match ratio
+    else:
+        confidence = 0.75  # Default confidence for fallback matches
+
     return {
         "inferred_type": best_type,
         "severity_score": min(10.0, base_severity),
         "required_resources": resources,
         "escalation_risk": risks,
-        "confidence": type_scores.get(best_type, 0) / max(1, len(semantic_patterns.get(best_type, {}).get("keywords", [1])))
+        "confidence": confidence
     }
 
 # Handle incoming chat messages
