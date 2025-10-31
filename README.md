@@ -11,14 +11,14 @@ ERAIN is a multi-agent emergency response system built with Fetch.ai uAgents fra
 
 ## Deployed Agents
 
-1. **Emergency Coordinator**: `agent1qfvx3gqgpngs7n8n5gjqh3ey0z9fee4wn2nz6r9g0glrqeu5stark6kpqzx`
+1. **Emergency Coordinator**: `agent1qf76r7qe6m2hc3qtm390q5xjuy38n66nnhfhh3dcwgsqn69sxeuqk0ejmhj`
    - Chat Protocol enabled for ASI:One
 
-2. **Medical Response**: `agent1qf4au6rzaauxhy2jze5v5tl8zct2g0cfg0qx8hfhcm3mq0dqzmguz5u4w7m`
+2. **Medical Response**: `agent1qgxzuzrukxv5sxp05vf4ma2l3u2u79t74nn5mkxw5fazqlyk3mkuulu7ykz`
 
-3. **Resource Allocation**: `agent1qwr7920pvzp8gtz8c6em6ezqkl0hqe0tttc0q6ze6ljew4yc0lzxc3lv9gp`
+3. **Resource Allocation**: `agent1q2hlqe2jcmdea0c97k0h2tfk8fsunfxmrspuwv4uulh4nugwqk6astqd35r`
 
-4. **Shelter Coordinator**: `agent1qg7cy6z7xjrvxfqwn7qhss6wyqnthqc5qhhvnearv9c0ctxzl8q2vfn0dy5`
+4. **Shelter Coordinator**: `agent1qwk8vrza032yre08rchhf74jfnmekswq8r20gvam22csz5av6x8ksjzntte`
 
 ## Features
 
