@@ -98,7 +98,7 @@ python test_local.py
 
 ## Demo Video
 
-[Watch Demo](https://youtube.com/...)  <!-- Update with actual link -->
+[Watch Demo - ASI:One Working!](https://www.loom.com/share/971f6001392d46d7aef842b8560c965a)
 
 ## License
 
