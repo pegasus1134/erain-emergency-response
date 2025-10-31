@@ -35,7 +35,7 @@ agent = Agent(
 
 fund_agent_if_low(agent.wallet.address())
 
-COORDINATOR = "agent1qf76r7qe6m2hc3qtm390q5xjuy38n66nnhfhh3dcwgsqn69sxeuqk0ejmhj"
+COORDINATOR = "agent1qfvx3gqgpngs7n8n5gjqh3ey0z9fee4wn2nz6r9g0glrqeu5stark6kpqzx"
 
 # Shelter network
 shelters = {
