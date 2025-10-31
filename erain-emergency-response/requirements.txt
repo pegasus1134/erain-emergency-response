@@ -1,0 +1,32 @@
+# ERAIN - Emergency Response AI Network
+# Required dependencies for ASI Alliance Hackathon
+
+# Core uAgents Framework
+uagents>=0.13.0
+uagents-core>=0.4.0
+
+# MeTTa Knowledge Graph (SingularityNET)
+hyperon>=0.1.0
+
+# Python Standard Library Extensions
+python-dateutil>=2.8.2
+typing-extensions>=4.5.0
+
+# Async and Networking
+aiohttp>=3.8.0
+asyncio-mqtt>=0.16.0
+websockets>=10.0
+
+# Utilities
+python-dotenv>=0.19.0
+pydantic>=2.0.0
+
+# Development and Testing (optional)
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0
+
+# Logging and Monitoring
+coloredlogs>=15.0.0
+python-json-logger>=2.0.0

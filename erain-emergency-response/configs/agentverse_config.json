@@ -1,0 +1,107 @@
+{
+  "project": "ERAIN - Emergency Response AI Network",
+  "category": "Innovation Lab",
+  "tags": ["innovationlab", "hackathon", "emergency", "ai", "asi-alliance"],
+  "agents": [
+    {
+      "name": "ERAIN Emergency Coordinator",
+      "address": "agent1qfvx3gqgpngs7n8n5gjqh3ey0z9fee4wn2nz6r9g0glrqeu5stark6kpqzx",
+      "port": 8000,
+      "endpoint": "http://localhost:8000/submit",
+      "protocols": ["chat_protocol"],
+      "description": "Main orchestrator for emergency response coordination. Handles incoming emergencies, dispatches specialized agents, and provides real-time updates via ASI:One.",
+      "capabilities": [
+        "Natural language emergency processing",
+        "Multi-agent coordination",
+        "Priority-based dispatch",
+        "Real-time status updates"
+      ],
+      "chat_enabled": true,
+      "asi_one_compatible": true
+    },
+    {
+      "name": "ERAIN Medical Response",
+      "address": "agent1qf4au6rzaauxhy2jze5v5tl8zct2g0cfg0qx8hfhcm3mq0dqzmguz5u4w7m",
+      "port": 8001,
+      "endpoint": "http://localhost:8001/submit",
+      "protocols": ["chat_protocol"],
+      "description": "Specialized medical emergency handler. Coordinates ambulances, finds suitable hospitals, and provides first-aid guidance.",
+      "capabilities": [
+        "Hospital capacity matching",
+        "Ambulance dispatch",
+        "Triage assessment",
+        "Medical resource coordination"
+      ],
+      "chat_enabled": true,
+      "asi_one_compatible": true
+    },
+    {
+      "name": "ERAIN Resource Allocation",
+      "address": "agent1qwr7920pvzp8gtz8c6em6ezqkl0hqe0tttc0q6ze6ljew4yc0lzxc3lv9gp",
+      "port": 8002,
+      "endpoint": "http://localhost:8002/submit",
+      "protocols": ["chat_protocol"],
+      "description": "AI-powered resource optimization agent. Manages emergency supplies, equipment, and personnel allocation across multiple depots.",
+      "capabilities": [
+        "Multi-depot inventory management",
+        "AI-based allocation optimization",
+        "Predictive resource planning",
+        "Cross-depot resource sharing"
+      ],
+      "chat_enabled": true,
+      "asi_one_compatible": true
+    },
+    {
+      "name": "ERAIN Shelter Coordinator",
+      "address": "agent1qg7cy6z7xjrvxfqwn7qhss6wyqnthqc5qhhvnearv9c0ctxzl8q2vfn0dy5",
+      "port": 8003,
+      "endpoint": "http://localhost:8003/submit",
+      "protocols": ["chat_protocol"],
+      "description": "Manages emergency shelters and evacuations. Matches people to appropriate shelters based on needs and capacity.",
+      "capabilities": [
+        "Real-time shelter capacity tracking",
+        "Special needs accommodation",
+        "Evacuation route planning",
+        "Pet-friendly shelter matching"
+      ],
+      "chat_enabled": true,
+      "asi_one_compatible": true
+    }
+  ],
+  "integrations": {
+    "metta_knowledge_graph": {
+      "enabled": true,
+      "description": "SingularityNET MeTTa integration for semantic reasoning and decision support",
+      "features": [
+        "Emergency type inference",
+        "Severity assessment",
+        "Resource optimization",
+        "Escalation prediction"
+      ]
+    },
+    "chat_protocol": {
+      "enabled": true,
+      "platform": "ASI:One",
+      "features": [
+        "Natural language processing",
+        "Multi-language support potential",
+        "Real-time communication",
+        "Session management"
+      ]
+    }
+  },
+  "deployment": {
+    "network": "Fetch.ai Testnet",
+    "auto_fund": true,
+    "monitoring": true,
+    "scaling": "horizontal",
+    "redundancy": "high"
+  },
+  "manifest": {
+    "version": "1.0.0",
+    "author": "ERAIN Team",
+    "license": "MIT",
+    "repository": "https://github.com/erain/emergency-response",
+    "documentation": "https://github.com/erain/emergency-response/blob/main/README.md"
+  }
+}
